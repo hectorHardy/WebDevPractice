@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Search</title>
+        <link href="styles/search_final.css" type="text/css" rel="stylesheet">   
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="dark-grey-bg">
+                <div id="logo-container">
+                    <a class="logo nav-link n-red-fg large-font" href="#">M</a>
+                </div>
+                <div id="nav-button-container">
+                    <ul>
+                        <li><a class="nav-item nav-link n-red-fg" href="#">Sign Up</a></li>
+                        <li><a class="nav-item nav-link n-red-fg" href="#">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <section id="content">
+            <header>
+                <h2>What to watch today!?</h2>
+                <button class="content-btn" id="watchlist-button">My Watchlist</button>        
+            </header>
+            <section id="search-box" class="light-grey-bg">
+                <h3>Customize your search:</h3>
+                <form method="post">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" placeholder="e.g: Shutter Island">
+                    <button class="light-grey-bg search-box-btn" id="showAdvancedBtn">Show advanced search</button>
+                    <div id=advanced-search>
+                        <label for="primary_release_year.gte">Year from:</label>
+                        <input type="range" id="year" name="primary_release_date.gte" min="1950" max="2021" value="1950"/>
+                        <span id="year_value" style="margin-left: 10px;">1950</span>
+                        <label for="director">Director:</label>
+                        <input type="text" list="directors" id="with_crew" name="with_crew" placeholder="e.g: James Wan" autocomplete="off">
+                        <datalist id="directors"></datalist>
+                        <label for="cast">Cast:</label>
+                        <input type="text" list="cast" id="with_cast" name="with_cast" placeholder="e.g: Leonardo DiCaprio" autocomplete="off">   
+                        <datalist id="cast"></datalist>                     
+                        <label for="with_genres">Genre:</label>
+                        <select id="genre" name="with_genres"></select>
+                        <br>                        
+                        <label for="rating">Rating:</label>
+                        <p>min: </p>
+                        <input type="number" class="rating-input" id="min-rating" name="vote_average.gte" min="1" max="9" value="1">
+                        <p>max: </p>
+                        <input type="number" class="rating-input" id="max-rating" name="vote_average.lte" min="2" max="10" value="10">
+                    </div>
+                </form>
+                <button class="content-btn search-box-btn" id="searchButton">Search</button>
+            </section>
+            <section id="result-box" class="light-grey-bg">
+                <h3>Results</h3>
+                <div id="results">
+
+                </div>
+            </section>
+        </section>
+        <footer>
+            <p>Dynamic Web Development - 2021</p>
+            <p>All rights reserved: valkiss024, Solomon, hectorHardy</p>
+        </footer>
+        <script src="./scripts/search_final.js"></script>
+    </body>
+</html>
