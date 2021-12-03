@@ -1,14 +1,14 @@
 const main = document.getElementById("main") ;
 const newMovieDiv = document.getElementById("newMovieDiv") ;
 const topRated = document.getElementById("topRated") ;
+
 var api_key = "api_key=aa4bc002b1afb54b32ea4076630282bb" ;
 var base_url = "https://api.themoviedb.org/3/" ;
+var img_url = "https://image.tmdb.org/t/p/w500" ;
+
 var api_url = base_url + "discover/movie?sort_by=popularity.desc&" + api_key ;
 var new_url = base_url + "movie/upcoming?&page=2&" + api_key ;
 var top_url = base_url + "movie/top_rated?&" + api_key ;
-var img_url = "https://image.tmdb.org/t/p/w500" ;
-
-var watchList = [] ;
 
 window.onload = function(){
     getMovies(api_url, main) ;
@@ -16,7 +16,7 @@ window.onload = function(){
     getMovies(top_url, topRated) ;
 }
 
-function getMovies(url, divTag) {
+function getMovies(url, divTag) { //gets data about movies using TMDB api
     fetch(url).then(res => res.json()).then(data => {
         console.log(data.results) ;
         showMovies(data.results, divTag) ;
@@ -24,7 +24,7 @@ function getMovies(url, divTag) {
     })
 }
 
-function showMovies(data, divTag) {
+function showMovies(data, divTag) { //assigns movie data to variables then formats the info before adding to the landing page
     divTag.innerHTML = '';
     //data = JSON.parse(data);
     data.forEach(movie => {
@@ -44,7 +44,7 @@ function showMovies(data, divTag) {
 })
 }
 
-function getColor(vote) {
+function getColor(vote) { //sets the rating colour depending on score
     if(vote>=8){
         return "green" ;
     }
@@ -56,7 +56,7 @@ function getColor(vote) {
     }
 }
 
-function getMovieId(id) {
+function getMovieId(id) {//gets the movie id from h3 element and uses it to find movie info
     
     console.log(id) ;
 
@@ -70,7 +70,7 @@ function getMovieId(id) {
 
 }
 
-function addResultsDiv(jsondata) {
+function addResultsDiv(jsondata) { //similar to function showMovies but only finds data for one specific movie at a time before formatting data and adding to watchlist section of landing page
     console.log(jsondata);
     
 
