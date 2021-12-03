@@ -1,5 +1,5 @@
 // When document is loaded
-const apiKey = "16c416000d15a81b6baaeb7641ed1b26"
+const apiKey = "" // ADD TMDB API KEY HERE
 const poster_path_base = "https://image.tmdb.org/t/p/original"
 
 // Helper function to insert movies to the results container
