@@ -1,6 +1,6 @@
 const tmdbKey = "16c416000d15a81b6baaeb7641ed1b26"; // ADD TMDB API KEY HERE
 const imdbKey = "k_km2lsf6q"; // ADD IMDB API KEY HERE
-const rapidKey = ""; // ADD RAPIDAPI API KEY HERE
+const rapidKey = "8784b1dedbmshe159ceaadd14dc3p1baa6bjsn50195ef5079f"; // ADD RAPIDAPI API KEY HERE
 const posterBasePath = "https://image.tmdb.org/t/p/original";
 const movieId = window.location.search.split("=")[1];
 
