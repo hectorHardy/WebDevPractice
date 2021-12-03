@@ -1,23 +1,20 @@
 .container {
-    --color-primary: #ffda99;
-    --color-primary-dark: #FFAC1C;
+    --color-primary: rgba(229, 9, 20, .75);
+    --color-primary-dark: rgba(229, 9, 20, 1);
     --color-secondary: #252c6a;
     --color-error: #cc3333;
     --color-success: #4bb544;
     --border-radius: 4px;
 
-    /*margin: 0;*/
-    /*height: 100vh;*/
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    /*background: url(./background.jpg);*/
     background-size: cover;
 
     width: 400px;
     max-width: 400px;
-    margin: 1rem;
+    margin: 5rem auto;
     padding: 2rem;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     border-radius: var(--border-radius);
@@ -45,6 +42,7 @@
 .form__title {
     margin-bottom: 2rem;
     text-align: center;
+    color: #ffffff;
 }
 
 .form__message {
