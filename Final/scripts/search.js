@@ -5,7 +5,7 @@ const poster_path_base = "https://image.tmdb.org/t/p/original"
 // Helper function to insert movies to the results container
 
 function insertMovie(movie){ // Movie object parameter
-    var redirect_url = "profile_final.html?movie_id=" + movie.id;
+    var redirect_url = "profile.html?movie_id=" + movie.id;
     // Generate and store the full path to the movie's poster if the unique poster path is not null
     var full_poster_path = (movie.poster_path !== null) ? poster_path_base + movie.poster_path : "";
     // Create the external container with the corresponding class for styling
